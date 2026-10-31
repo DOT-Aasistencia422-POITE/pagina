@@ -1,0 +1,22 @@
+[
+  {
+    "fecha": "2026-10-31",
+    "titulo": "Noticia de ejemplo: así se carga una novedad",
+    "resumen": "Texto corto que aparece en la tarjeta. Esta noticia es un ejemplo: borrarla o cambiar \"publicar\" a false.",
+    "texto": "Texto completo opcional. Se muestra en la página Novedades al tocar \"Leer más\".\nSe pueden usar saltos de línea.",
+    "imagen": "",
+    "enlace": "",
+    "textoEnlace": "",
+    "publicar": true
+  },
+  {
+    "fecha": "2026-10-30",
+    "titulo": "Noticia de ejemplo con enlace",
+    "resumen": "Si una noticia tiene \"enlace\", aparece un botón para abrirlo (por ejemplo, un formulario o una publicación de Instagram).",
+    "texto": "",
+    "imagen": "",
+    "enlace": "https://www.instagram.com/biblioteca_lapaz1/",
+    "textoEnlace": "Ver en Instagram",
+    "publicar": true
+  }
+]

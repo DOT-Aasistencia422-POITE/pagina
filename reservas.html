@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Área docente · Liceo N.º 1 de La Paz</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-pagina="reservas">
+
+<main>
+  <div class="cabecera">
+    <div class="icono"><svg><use href="#i-candado"/></svg></div>
+    <div><h1>Área docente</h1><p>Reservas de recursos y documentos internos. Requiere la clave del liceo.</p></div>
+  </div>
+
+  <!-- Pantalla de acceso -->
+  <section id="acceso">
+    <form class="panel acceso" id="form-acceso">
+      <img src="images/logo.svg" alt="" class="acceso-logo">
+      <h2 class="subtitulo">Ingresar</h2>
+      <p class="nota">La clave la entrega la dirección o las POITE.</p>
+      <input type="password" id="clave" class="campo" placeholder="Clave de acceso" autocomplete="current-password" required>
+      <button class="btn btn-principal" id="btn-entrar" type="submit">Entrar</button>
+      <p class="mensaje" id="msg-acceso" role="status"></p>
+    </form>
+  </section>
+
+  <!-- Contenido protegido -->
+  <div id="app" hidden>
+    <section>
+      <div class="titulo-seccion">
+        <h2>Reservas</h2>
+        <span class="sesion">Sesión: <b id="rol"></b> · <button class="link" id="btn-salir" type="button">Salir</button></span>
+      </div>
+      <div class="alerta" id="alerta" hidden></div>
+      <div class="panel">
+        <div class="controles">
+          <label>Recurso<select id="sel-recurso" class="campo"></select></label>
+          <label>Turno<select id="sel-turno" class="campo"></select></label>
+          <div class="nav-semana">
+            <button class="btn btn-secundario" id="ant" type="button" aria-label="Semana anterior">‹</button>
+            <button class="btn btn-secundario" id="btn-hoy" type="button">Hoy</button>
+            <button class="btn btn-secundario" id="sig" type="button" aria-label="Semana siguiente">›</button>
+          </div>
+        </div>
+        <p class="nota"><b id="semana"></b> · <span id="desc-recurso"></span></p>
+        <div class="grilla-scroll" id="grilla"></div>
+        <div class="barra-seleccion" id="barra-seleccion" hidden>
+          <span id="cant-seleccion"></span>
+          <button class="btn btn-secundario" id="btn-limpiar" type="button">Limpiar</button>
+          <button class="btn btn-principal" id="btn-reservar" type="button">Reservar</button>
+        </div>
+      </div>
+
+      <form class="panel cancelar" id="form-cancelar">
+        <span>Para cancelar, ingresar el código de la reserva:</span>
+        <input class="campo" id="codigo-cancelar" placeholder="Ej.: K7PQ2M" maxlength="10">
+        <button class="btn btn-secundario" type="submit">Cancelar reserva</button>
+      </form>
+    </section>
+
+    <section>
+      <div class="titulo-seccion"><h2>Documentos internos</h2></div>
+      <div id="enlaces"><p class="vacio">Cargando…</p></div>
+    </section>
+  </div>
+
+  <!-- Formulario de reserva -->
+  <div class="modal" id="modal" hidden>
+    <form class="panel modal-caja" id="form-reserva">
+      <h2 class="subtitulo">Confirmar reserva</h2>
+      <p class="nota" id="resumen-reserva"></p>
+      <label>Docente<input class="campo" id="docente" maxlength="80" required></label>
+      <label>Grupo<input class="campo" id="grupo" maxlength="30" placeholder="Ej.: 2.º 3"></label>
+      <label>Actividad (opcional)<input class="campo" id="motivo" maxlength="200"></label>
+      <div class="botones">
+        <button class="btn btn-secundario" id="btn-cerrar" type="button">Volver</button>
+        <button class="btn btn-principal" id="btn-confirmar" type="submit">Confirmar</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<script src="layout.js"></script>
+<script src="reservas.js"></script>
+</body>
+</html>

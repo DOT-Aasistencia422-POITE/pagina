@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aviso de inasistencia · Liceo N.º 1 de La Paz</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-pagina="docentes">
+
+<main>
+  <div class="cabecera">
+    <div class="icono"><svg><use href="#i-aviso"/></svg></div>
+    <div><h1>Aviso de inasistencia</h1><p>Para funcionarios no docentes. Arma el correo de aviso listo para enviar a la dirección.</p></div>
+  </div>
+
+  <section>
+    <form class="panel formulario" id="form-aviso">
+      <label>Nombre completo<input class="campo" name="nombre" maxlength="80" required></label>
+      <label>Cédula de identidad<input class="campo" name="ci" inputmode="numeric" pattern="[0-9]{7,8}" maxlength="8" placeholder="Sin puntos ni guion" required></label>
+      <div class="dos-col">
+        <label>Fecha de la inasistencia<input class="campo" type="date" name="fecha" required></label>
+        <label>Turno<select class="campo" name="turno" required>
+            <option value="">Elegir turno…</option>
+            <option>Matutino</option>
+            <option>Vespertino</option>
+          </select></label>
+      </div>
+      <label>Motivo<select class="campo" name="motivo" required>
+            <option value="">Elegir motivo…</option>
+            <option>Motivos personales (Art. 75)</option>
+            <option>Médica / enfermedad (Art. 33)</option>
+            <option>Maternidad (Art. 49)</option>
+            <option>Matrimonio (Art. 57)</option>
+            <option>Duelo (Art. 58)</option>
+            <option>Examen / estudio (Art. 59)</option>
+            <option>Concursos oficiales (Art. 62)</option>
+            <option>Trámite jubilatorio (Art. 64)</option>
+            <option>Donación de sangre (Art. 65)</option>
+            <option>Familiar enfermo (Art. 66)</option>
+            <option>Salida dentro del horario (Art. 76)</option>
+            <option>Llegada hasta 1 hora tarde (Art. 77)</option>
+            <option>Otros motivos</option>
+          </select></label>
+      <label>Comentarios (opcional)<textarea class="campo" name="comentarios" rows="3" maxlength="500"></textarea></label>
+      <div class="botones">
+        <button class="btn btn-principal" type="submit">Generar correo de aviso</button>
+        <button class="btn btn-secundario" type="button" id="btn-copiar" hidden>Copiar texto</button>
+      </div>
+      <p class="nota" id="ayuda-aviso">Se abre el programa de correo con el mensaje armado. Si no se abre, usar "Copiar texto" y enviarlo a <b id="correo-destino"></b>.</p>
+      <p class="mensaje" id="msg-aviso" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<script src="layout.js"></script>
+<script>
+  // Correo que recibe los avisos
+  const CORREO_AVISOS = 'ljavierdeviana@gmail.com';
+  document.getElementById('correo-destino').textContent = CORREO_AVISOS;
+
+  const form = document.getElementById('form-aviso');
+  let textoAviso = '';
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(form));
+    const [a, m, dd] = d.fecha.split('-');
+    const fecha = `${dd}/${m}/${a}`;
+    const asunto = `Aviso de inasistencia - ${d.nombre} - ${fecha}`;
+    textoAviso = [
+      'Aviso de inasistencia (funcionario no docente)', '',
+      `Nombre: ${d.nombre}`, `Cédula: ${d.ci}`, `Fecha: ${fecha}`,
+      `Turno: ${d.turno}`, `Motivo: ${d.motivo}`,
+      d.comentarios ? `Comentarios: ${d.comentarios}` : '', '',
+      'Enviado desde la página del Liceo N.º 1 de La Paz.'
+    ].filter((l, i, arr) => l !== '' || arr[i - 1] !== '').join('\n');
+    window.location.href = `mailto:${CORREO_AVISOS}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(textoAviso)}`;
+    document.getElementById('btn-copiar').hidden = false;
+    document.getElementById('msg-aviso').textContent = 'Correo generado. Revisarlo y enviarlo desde el programa de correo.';
+  });
+
+  document.getElementById('btn-copiar').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(textoAviso); document.getElementById('msg-aviso').textContent = 'Texto copiado.'; }
+    catch { document.getElementById('msg-aviso').textContent = 'No se pudo copiar automáticamente.'; }
+  });
+</script>
+</body>
+</html>

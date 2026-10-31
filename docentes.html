@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docentes y funcionarios · Liceo N.º 1 de La Paz</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-pagina="docentes">
+
+<main>
+  <div class="cabecera">
+    <div class="icono"><svg><use href="#i-docentes"/></svg></div>
+    <div><h1>Docentes y funcionarios</h1><p>Formularios, reservas y herramientas de trabajo.</p></div>
+  </div>
+
+  <section>
+    <div class="pestanas" role="tablist">
+      <button class="activo" data-panel="p-docentes">Docentes</button>
+      <button data-panel="p-funcionarios">Funcionarios</button>
+    </div>
+
+    <div class="panel-pestana" id="p-docentes">
+      <h2 class="subtitulo" style="margin-bottom:14px">En el liceo</h2>
+      <div class="accesos">
+        <!-- CAMBIAR LINKS: reemplazar cada href="#" por el link real -->
+        <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-aviso"/></svg></div><h3>Aviso de inasistencia</h3><p>Formulario para comunicar faltas.</p></a>
+        <a class="tarjeta" href="reservas.html"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-candado"/></svg></div><h3>Reservas y documentos</h3><p>Área docente con clave: reservas de salas y recursos, planos y documentos internos.</p></a>
+        <a class="tarjeta" href="ceibal.html"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-carpeta"/></svg></div><h3>Registro diario</h3><p>Registro de la sala de informática (Área POITE).</p></a>
+        <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-novedades"/></svg></div><h3>Avisos para docentes</h3><p>Comunicados internos y documentos.</p></a>
+      </div>
+
+      <h2 class="subtitulo" style="margin:32px 0 14px">Gestión y trámites</h2>
+      <div class="accesos">
+        <a class="tarjeta" href="https://lu.anep.edu.uy/cas-anep/login?service=https%3A%2F%2Fportafoliodocente.anep.edu.uy%2Fshiro-cas" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-carpeta"/></svg></div><h3>Portafolio docente</h3><p>Portafolio ANEP (ingreso con usuario ANEP).</p></a>
+        <a class="tarjeta" href="https://servicios.ces.edu.uy/portal/cgi-bin/portal/login" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-funcionarios"/></svg></div><h3>Portal de servicios</h3><p>Recibos, licencias y datos funcionales.</p></a>
+        <a class="tarjeta" href="https://servicios.ces.edu.uy/drupal/formulas-administrativas" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-novedades"/></svg></div><h3>Fórmulas administrativas</h3><p>Formularios y notas para trámites.</p></a>
+        <a class="tarjeta" href="https://www.anep.edu.uy/sites/default/files/images/Archivos/normativa/estatutos/Estatuto%20del%20Funcionario%20DOCENTE%202025.pdf" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-libro"/></svg></div><h3>Estatuto docente</h3><p>Estatuto del Funcionario Docente (ANEP, 2025).</p></a>
+        <a class="tarjeta" href="https://mail.google.com" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-correo"/></svg></div><h3>Correo institucional</h3><p>Acceso al correo del liceo.</p></a>
+      </div>
+
+      <h2 class="subtitulo" style="margin:32px 0 14px">Herramientas para el aula</h2>
+      <div class="accesos">
+        <a class="tarjeta" href="https://ceibal.schoology.com/" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-compu"/></svg></div><h3>CREA</h3><p>Plataforma educativa de Ceibal.</p></a>
+        <a class="tarjeta" href="https://classroomscreen.com/" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-reloj"/></svg></div><h3>Pizarra interactiva</h3><p>Classroomscreen: temporizador, sorteos, semáforo y más.</p></a>
+        <a class="tarjeta" href="https://paper.click/es/" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-carpeta"/></svg></div><h3>Papel para imprimir</h3><p>Hojas cuadriculadas, pautadas y milimetradas.</p></a>
+      </div>
+    </div>
+
+    <div class="panel-pestana" id="p-funcionarios" hidden>
+      <div class="accesos">
+        <a class="tarjeta" href="aviso-funcionarios.html"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-aviso"/></svg></div><h3>Aviso de inasistencia</h3><p>Formulario para funcionarios.</p></a>
+        <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-funcionarios"/></svg></div><h3>Equipo del liceo</h3><p>Dirección, secretaría, adscripción y servicios.</p></a>
+        <a class="tarjeta" href="https://servicios.ces.edu.uy/portal/cgi-bin/portal/login" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-funcionarios"/></svg></div><h3>Portal de servicios</h3><p>Recibos, licencias y datos funcionales.</p></a>
+        <a class="tarjeta" href="https://servicios.ces.edu.uy/drupal/formulas-administrativas" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-novedades"/></svg></div><h3>Fórmulas administrativas</h3><p>Formularios y notas para trámites.</p></a>
+        <a class="tarjeta" href="https://mail.google.com" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+          <div class="icono"><svg><use href="#i-correo"/></svg></div><h3>Correo institucional</h3><p>Acceso al correo del liceo.</p></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="layout.js"></script>
+</body>
+</html>

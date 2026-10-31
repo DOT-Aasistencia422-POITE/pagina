@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liceo N.º 1 de La Paz "Javier de Viana"</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-pagina="inicio">
+
+<main>
+  <div class="bienvenida">
+    <div>
+      <span class="etiqueta">Educación Media · DGES · Desde 1964</span>
+      <h1>Liceo N.º 1 de La Paz <span>"Javier de Viana"</span></h1>
+      <p>[Texto de bienvenida: breve presentación del liceo, su historia y su comunidad. Reemplazar con el texto institucional.]</p>
+      <div class="botones">
+        <a class="btn btn-principal" href="horarios.html">Ver horarios</a>
+        <a class="btn btn-secundario" href="#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="foto"><img src="images/logo.svg" alt="Escudo del Liceo N.º 1 de La Paz"></div>
+  </div>
+
+  <section>
+    <div class="titulo-seccion"><h2>Accesos rápidos</h2></div>
+    <div class="accesos">
+      <a class="tarjeta" href="horarios.html"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-reloj"/></svg></div><h3>Horarios</h3><p>Horarios por turno y grupo.</p></a>
+      <a class="tarjeta" href="reservas.html"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-calendario"/></svg></div><h3>Reservas</h3><p>Sala de informática y espacios comunes.</p></a>
+      <a class="tarjeta" href="docentes.html"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-aviso"/></svg></div><h3>Avisos de inasistencia</h3><p>Formularios para docentes y funcionarios.</p></a>
+      <a class="tarjeta" href="biblioteca.html"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-libro"/></svg></div><h3>Biblioteca</h3><p>Horarios, bibliografía y bibliotecas digitales.</p></a>
+      <a class="tarjeta" href="espacios.html#familias"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-familia"/></svg></div><h3>Familias</h3><p>Información y trámites para familias.</p></a>
+      <a class="tarjeta" href="espacios.html#recursos"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-recursos"/></svg></div><h3>Recursos</h3><p>Ceibal, DGES, programas y reglamentos.</p></a>
+      <a class="tarjeta" href="ceibal.html"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-compu"/></svg></div><h3>Área POITE</h3><p>Ceibal, sala de informática, reparaciones y robo o extravío.</p></a>
+    </div>
+  </section>
+
+  <section>
+    <div class="titulo-seccion"><h2>Turnos</h2><a href="horarios.html">Ver horarios →</a></div>
+    <div class="turnos">
+      <div class="turno"><h3>Matutino extendido</h3><p>Turno diurno. [Horario de entrada y salida]</p></div>
+      <div class="turno"><h3>Vespertino extendido</h3><p>Turno diurno. [Horario de entrada y salida]</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="titulo-seccion"><h2>Novedades</h2><a href="novedades.html">Ver todas →</a></div>
+    <div class="novedades" data-noticias data-limite="3"></div>
+  </section>
+</main>
+
+<script src="layout.js"></script>
+<script src="noticias.js"></script>
+</body>
+</html>
