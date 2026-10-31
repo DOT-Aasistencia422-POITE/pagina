@@ -1,0 +1,540 @@
+/* ==========================================================================
+   0. Constantes de Color (Variables CSS)
+   ========================================================================== */
+:root {
+    /* Paleta de Colores Institucional */
+    --color-principal-azul: #003366;      /* Azul institucional oscuro */
+    --color-principal-hover: #004488;     /* Azul un poco más claro para hovers generales */
+    --color-acento-amarillo: #ffcc00;     /* Amarillo para destaques y hovers del menú */
+    --color-borde-celeste: #00d4ff;       /* Celeste brillante para el elemento navbar activo */
+    --color-fondo-pagina: #f9f9f9;        /* Gris muy suave de fondo general */
+    --color-fondo-tarjeta: #ffffff;       /* Blanco puro para tarjetas, posts y fondos de items */
+    
+    /* Textos */
+    --color-texto-oscuro: #333333;        /* Gris casi negro para el texto principal del body */
+    --color-texto-suave: #666666;         /* Gris medio para textos apagados o descripciones */
+    --color-texto-gris: #ccc;             /* Gris claro para el texto secundario del footer */
+    --color-texto-blanco: #ffffff;        /* Blanco para contrastes */
+    
+    /* Variantes con Transparencia */
+    --color-sombra-overlay: rgba(0, 51, 102, 0.4);       /* Sombra azul transparente del header */
+    --color-titulo-post-fondo: rgba(0, 51, 102, 0.1);    /* Fondo azul transparente para los H3 de posts */
+    --color-sombra-suave: rgba(0, 0, 0, 0.1);            /* Sombra de tarjetas, posts e iframes */
+    --color-sombra-dropdown: rgba(0, 0, 0, 0.2);         /* Sombra pesada para el menú desplegable */
+    --color-sombra-herramienta-hover: rgba(0, 51, 102, 0.2); /* Sombra azul al pasar el mouse por los botones */
+    --color-sombra-header-texto: rgba(0, 0, 0, 0.7);     /* Sombra del texto del cabezal */
+    
+    /* Estados y Elementos Específicos */
+    --color-gris-borde: #ccc;             /* Borde de los campos de entrada */
+    --color-gris-bloque-noticia: #f0f0f0; /* Fondo del contenedor de imagen de noticias */
+    --color-fondo-hover-herramienta: #f0f7ff; /* Celeste casi imperceptible para hover de botones */
+}
+
+/* ==========================================================================
+   1. Reset y Variables Generales
+   ========================================================================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+body { 
+    background-color: var(--color-fondo-pagina); 
+    color: var(--color-texto-oscuro); 
+    line-height: 1.6;
+}
+
+/* 2. Cabezal y Overlay */
+.main-header {
+    height: 300px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/4/4a/Liceo_N%C2%BA_14_Treinta_y_Tres_Orientales.jpg') center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-texto-blanco);
+    text-shadow: 2px 2px 8px var(--color-sombra-header-texto);
+}
+
+.overlay { 
+    text-align: center; 
+    background: var(--color-sombra-overlay); 
+    width: 100%; 
+    padding: 20px; 
+}
+
+.overlay h1 { 
+    font-size: 3rem; 
+    text-transform: uppercase; 
+}
+
+/* 3. Navegación Principal */
+.navbar {
+    background-color: var(--color-principal-azul);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+.navbar a {
+    color: var(--color-texto-blanco);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: transform 0.3s ease, color 0.3s;
+}
+
+.navbar a:hover { 
+    transform: scale(1.1); /* Reducido un poco para que sea más sutil */
+    color: var(--color-acento-amarillo); 
+}
+
+.navbar a.active { 
+    border: 2px solid var(--color-borde-celeste); 
+    border-radius: 5px; 
+}
+
+/* 4. Menús Desplegables (Dropdown) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-fondo-tarjeta);
+    min-width: 180px;
+    box-shadow: 0px 8px 16px var(--color-sombra-dropdown);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown-content a { 
+    color: var(--color-principal-azul) !important;
+    padding: 12px 16px; 
+    transform: none !important; /* Evita saltos visuales en el menú */
+}
+
+.dropdown-content a:hover { 
+    background-color: var(--color-principal-azul); 
+    color: var(--color-acento-amarillo) !important; 
+}
+
+.dropdown:hover .dropdown-content { 
+    display: block; 
+}
+
+/* 5. Estructura de Contenido (Posts) */
+.container { 
+    max-width: 900px; 
+    margin: 20px auto; 
+    padding: 20px; 
+}
+
+.post {
+    background: var(--color-fondo-tarjeta);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-principal-azul);
+    box-shadow: 0 2px 5px var(--color-sombra-suave);
+}
+
+.post h3:first-of-type {
+    background-color: var(--color-titulo-post-fondo); /* Más suave para legibilidad */
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.post-content {
+    display: flex;
+    flex-wrap: wrap; /* <-- CLAVE: Permite que la imagen baje si requiere más espacio */
+    align-items: flex-start; 
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+.post-text {
+    flex: 1;
+    min-width: 280px; /* Evita que el texto se comprima a menos de este ancho */
+}
+
+.post-content img {
+    width: 100%;       
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain; /* Cambiado a contain para asegurar que las planillas de aulas no se recorten */
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.post-content > a {
+    margin-left: auto;
+    display: block;
+    width: 55%;       /* <-- Subimos al 55% para que la grilla de aulas se vea enorme */
+    min-width: 320px; /* Tamaño mínimo aceptable para que no se rompa en celulares */
+    flex-shrink: 0;
+}
+
+.post-content img:hover {
+    opacity: 0.9; /* Hace un leve efecto visual al pasar el mouse */
+    transform: scale(1.02); /* Un sutil efecto de aumento al pasar el mouse */
+}
+
+/* 6. Utilidades y Botones */
+.btn-lsu, 
+.btn-comment {
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    margin: 0;
+    vertical-align: middle;
+    border-radius: 4px;
+    border: none;
+    background: var(--color-principal-azul);
+    color: var(--color-texto-blanco);
+    cursor: pointer;
+}
+
+.highlight-line {
+    background-color: var(--color-titulo-post-fondo);
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* 7. Gestión de iFrames */
+iframe {
+    width: 100%;
+    border: none;
+    display: block;
+}
+
+/* Escalar contenido del Horario */
+.iframe-container {
+    overflow: hidden;
+    width: 100%;
+    height: 600px; /* Altura visual en la página */
+    border-radius: 4px;
+    margin-top: 10px;
+    position: relative; /* nuevo */
+}
+
+.iframe-small {
+    transform: scale(0.8);
+    transform-origin: 0 0;
+    width: 125%; 
+    height: 750px; /* Altura interna (600 / 0.8) */
+    border: none;
+}
+
+.iframe-fullscreen {
+    height: 85vh; /* Ocupa el 85% del alto de la pantalla */
+}
+/* Contenedor del Blog (Limpio) */
+.blog-wrapper {
+    background: var(--color-fondo-tarjeta);
+    border-radius: 8px;
+    border-left: 5px solid var(--color-principal-azul);
+    box-shadow: 0 2px 5px var(--color-sombra-suave);
+    overflow: hidden;
+}
+
+/* 8. Formularios */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid var(--color-gris-borde);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-principal-azul);
+    box-shadow: 0 0 5px var(--color-sombra-herramienta-hover);
+}
+
+/* 9. Footer */
+.main-footer { 
+    background: var(--color-texto-oscuro); 
+    color: var(--color-texto-blanco); 
+    padding: 30px; 
+    margin-top: 40px; 
+}
+
+.footer-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+}
+
+.footer-list {
+    list-style: none;     /* Chau círculos/viñetas */
+    padding: 0;           /* Reseteamos el padding por defecto de las listas */
+    margin: 5px 0 10px 0; /* Margen vertical para separarla de los textos <p> */
+}
+
+.footer-list li {
+    padding-left: 15px;   /* Genera la sangría visual que querés */
+    font-size: 0.95rem;   /* Un toque más sutil para los datos internos */
+    color: var(--color-texto-gris); /* Un gris claro para que contraste suavemente en el fondo oscuro */
+}
+
+.footer-list li span {
+    font-weight: bold;
+    color: var(--color-texto-blanco); /* Blanco pleno para el número */
+}
+
+/* Contenedor principal del escritorio */
+.escritorio-grid {
+    display: grid;
+    /* Define columnas de mínimo 150px que llenan el espacio disponible */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 20px; /* Espacio entre botones */
+    padding: 10px;
+}
+
+/* Estilo de cada "Botón/Tarjeta" */
+.herramienta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-fondo-tarjeta);
+    border: 2px solid var(--color-principal-azul);
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+/* Efecto al pasar el mouse */
+.herramienta-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--color-sombra-herramienta-hover);
+    background-color: var(--color-fondo-hover-herramienta);
+}
+
+/* Imágenes dentro de los botones */
+.herramienta-item img {
+    width: 100px;  /* Tamaño fijo para uniformidad */
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 0px;
+}
+
+/* Texto debajo de la imagen */
+.herramienta-item span {
+    color: var(--color-principal-azul);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   10. Estructura para la Cartelera de Noticias (Escritorio y Móvil)
+   ========================================================================== */
+
+/* --- DISEÑO PARA PANTALLAS GRANDES (PC / TABLETS) --- */
+#seccion-noticias {
+    height: 340px; /* Un poco más de margen para asegurar comodidad visual */
+    overflow: hidden;
+    position: relative;
+}
+
+#noticia-dinamica {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.noticia-cuerpo {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 10px;
+    height: calc(100% - 50px);
+}
+
+.noticia-texto-bloque {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+#noticia-contenido {
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Corta a 5 líneas solo en escritorio */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5em;
+    max-height: 7.5em; 
+}
+
+#noticia-enlace {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+#noticia-imagen-container {
+    width: 240px; /* Ancho fijo del recuadro de imagen en escritorio */
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-gris-bloque-noticia); 
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#noticia-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* --- ADAPTACIÓN PARA DISPOSITIVOS MÓVILES (Celulares) --- */
+@media (max-width: 768px) {
+    #seccion-noticias {
+        height: auto; /* Rompe la altura fija: crece lo que necesite el texto */
+        overflow: visible;
+    }
+
+    .noticia-cuerpo {
+        display: block; /* Desactiva el flex horizontal y apila los elementos */
+        height: auto;
+    }
+
+    .noticia-texto-bloque {
+        display: block; /* Desactiva el flex interno */
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    #noticia-contenido {
+        display: block; /* Desactiva el recorte de líneas de Webkit */
+        overflow: visible;
+        max-height: none; /* Permite que el texto se explaye por completo */
+        text-overflow: clip;
+        margin-bottom: 15px;
+    }
+
+    #noticia-enlace {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 20px; /* Espaciado antes de la imagen */
+        text-align: center; /* Botón más cómodo para tocar con el dedo */
+    }
+
+    #noticia-imagen-container {
+        width: 100%; /* Ocupa todo el ancho de pantalla disponible */
+        height: 200px; /* Altura fija sugerida para que la imagen no sea infinita */
+        margin-top: 15px;
+    }
+
+    #noticia-imagen {
+        object-fit: contain; /* Cambiado a contain para que en móvil la planilla/imagen se lea entera */
+        background-color: var(--color-gris-bloque-noticia);
+    }
+}
+
+.acciones-noticia {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Botón de Lengua de Señas */
+
+/* Ajuste del ícono dentro del botón LSU */
+.btn-lsu img {
+    height: 22px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Modal Emergente */
+.modal-lsu {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-lsu-contenido {
+    background-color: var(--color-fondo-tarjeta);
+    padding: 15px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cerrar-modal-lsu {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--color-texto-oscuro);
+    cursor: pointer;
+}
+
+.cerrar-modal-lsu:hover {
+    color: var(--color-acento-amarillo);
+}
+
+.modal-lsu-contenido iframe {
+    width: 100%;
+    height: 380px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .modal-lsu-contenido iframe {
+        height: 240px;
+    }
+}

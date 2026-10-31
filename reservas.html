@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<link rel="canonical" href="https://liceo14.github.io/reservas.html" />
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liceo 14 "Treinta y Tres Orientales" - Reservas</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="overlay">
+            <h1>Liceo 14</h1>
+            <h2>"Treinta y Tres Orientales"</h2>
+        </div>
+    </header>
+
+    <nav class="navbar"
+		id="main-navbar">
+    </nav>
+
+	<div class="container">
+		<section class="post">
+			<h3>Reserva de espacios/recursos.</h3>
+			<br>
+			<div style="width: 100%; max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: 8px; border: 2px solid #2D5A27;">
+				<iframe 
+					src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FMontevideo&showPrint=0&src=YXVsYWluZm8xNEBnbWFpbC5jb20&src=YzAyYzQzODUwNzQ4YjZiZjA4Y2ZmYmJlYTdkOTA3MGNkZDlhZmQ0MDk4Zjc5ZGIyZDZmYzI4YzllMWRhZDVhY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&mode=WEEK" 
+					style="border:0" 
+					width="100%" 
+					height="500" 
+					frameborder="0" 
+					scrolling="no">
+				</iframe>
+			</div>
+			<br>
+			<a href="https://docs.google.com/spreadsheets/d/1LUVWRVHHPf_7A_T2Ypx-8fc7ujI9McIkcy73uBdPuQY/edit?gid=868043487#gid=868043487">Recuerde verificar disponibilidad aquí.</a>
+			<br>
+			<br>
+			<p>Las reservas requieren confirmación para hacerse efectivas </p>
+			<br>
+			<p>Complete este formulario con 48 horas de anticipación con la finalidad de organizar requerimientos y horarios.</p>
+			<br>			
+		
+		<form id="reservaForm" class="contact-form">
+			
+			<div class="form-group">
+				<label for="full-name">Nombre Completo:</label>
+				<input type="text" id="full-name" placeholder="Ej. Juan Pérez" required>
+			</div>
+			
+			<div class="form-group">
+				<label for="materia">Asignatura/Rol:</label>
+				<input type="text" id="materia" placeholder="Ej. POP/POB/Historia" required>
+			</div>
+
+			<div class="form-group">
+				<label for="fecha">Fecha de la Reserva:</label>
+				<input type="date" id="fecha" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+			</div>
+
+			<div class="form-group">
+				<label for="turno">Turno:</label>
+				<select id="turno" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+					<option value="" disabled selected>Seleccione turno...</option>
+					<option value="Matutino">Matutino</option>
+					<option value="Vespertino">Vespertino</option>
+					<option value="Nocturno">Nocturno</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="hr_inicio">Hora de inicio:</label>
+				<select id="hr_inicio" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+					<option value="" disabled selected>Seleccione la hora de inicio:</option>
+					<option value="7:20">7:20</option>
+					<option value="8:10">8:10</option>
+					<option value="8:50">8:50</option>
+					<option value="9:35">9:35</option>
+					<option value="10:25">10:25</option>
+					<option value="11:15">11:15</option>
+					<option value="11:55">11:55</option>
+					<option value="12:40">12:40</option>
+					<option value="13:45">13:45</option>
+					<option value="14:35">14:35</option>
+					<option value="15:15">15:15</option>
+					<option value="16:00">16:00</option>
+					<option value="16:50">16:50</option>
+					<option value="17:40">17:40</option>
+					<option value="18:20">18:20</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="hr_fin">Hora de finalización:</label>
+				<select id="hr_fin" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+					<option value="" disabled selected>Seleccione la hora de finalización:</option>
+					<option value="8:10">8:10</option>
+					<option value="8:50">8:50</option>
+					<option value="9:35">9:35</option>
+					<option value="10:25">10:25</option>
+					<option value="11:15">11:15</option>
+					<option value="11:55">11:55</option>
+					<option value="12:40">12:40</option>
+					<option value="13:45">13:45</option>
+					<option value="14:35">14:35</option>
+					<option value="15:15">15:15</option>
+					<option value="16:00">16:00</option>
+					<option value="16:50">16:50</option>
+					<option value="17:40">17:40</option>
+					<option value="18:20">18:20</option>
+					<option value="19:00">19:00</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="espacio">Espacio/Recurso:</label>
+				<select id="espacio" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+					<option value="" disabled selected>Seleccione espacio/recurso...</option>
+					<option value="Lab. Informática">Laboratorio de informática</option>
+					<option value="Biblioteca">Biblioteca</option>
+					<option value="Proyector">Proyector</option>
+					<option value="Lab. Bio./Quím.">Laboratorio de Biología/Química</option>
+					<option value="Lab. Física">Laboratorio de Física</option>
+					<option value="Aula 1">Aula 1 (conferencias)</option>
+					<option value="Aula 4">Aula 4 (casona)</option>
+					<option value="TV móvil">TV móvil (se retira en dirección)</option>
+				</select>
+			</div>
+			
+			<div class="form-group">
+				<label for="correo">Correo electrónico:</label>
+				<input type="text" id="correo" placeholder="Ej. usuario@gmail.com" required>
+			</div>
+
+			<div class="form-group">
+				<label for="message">Grupos y detalles adicionales:</label>
+				<textarea id="message" rows="3" placeholder="Ej: 7mo 1, 8vo 3..." ></textarea>
+			</div>
+
+			<button type="submit" class="btn-comment">Registrar Reserva</button>
+		</form>
+		</section>
+	</div>
+
+	<footer class="main-footer"
+		id="main-footer">
+	</footer>
+
+	<script>
+		document.getElementById('reservaForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+
+			const formData = new FormData();
+			formData.append('nombre', document.getElementById('full-name').value);
+			formData.append('materia', document.getElementById('materia').value);
+			formData.append('fecha', document.getElementById('fecha').value);
+			formData.append('turno', document.getElementById('turno').value);
+			formData.append('hr_inicio', document.getElementById('hr_inicio').value);
+			formData.append('hr_fin', document.getElementById('hr_fin').value);
+			formData.append('espacio', document.getElementById('espacio').value);
+			formData.append('detalles', document.getElementById('message').value);
+			formData.append('correo', document.getElementById('correo').value);
+
+			// Reemplaza con la URL que copiaste en el Paso 2
+			const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbxqfar6N0jU9Ir0fAWZt602eV91J948XFqizL4BBeVJ3-yV1gIOIQn5QB_NoR1_xFns/exec";
+
+			fetch(URL_SCRIPT, {
+					method: 'POST',
+					mode: 'no-cors', // <--- ESTO ES LA CLAVE
+					body: formData
+				})
+				.then(() => {
+					// Con 'no-cors' no podemos leer la respuesta de Google, 
+					// pero si llega aquí es porque se envió.
+					alert("✅ Solicitud enviada correctamente a la planilla y calendario.");
+					document.getElementById('reservaForm').reset();
+				})
+				.catch(err => {
+					console.error(err);
+					alert("❌ Error de conexión. Verifica tu internet o la URL del script.");
+				});
+		});
+	</script>
+	
+	<script src="main.js"></script>
+	
+</body>
+</html>
+
+

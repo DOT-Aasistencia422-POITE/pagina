@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<link rel="canonical" href="https://liceo14.github.io/novedades.html" />
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liceo 14 "Treinta y Tres Orientales" - Novedades</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="overlay">
+            <h1>Liceo 14</h1>
+            <h2>"Treinta y Tres Orientales"</h2>
+        </div>
+    </header>
+
+    <nav class="navbar"
+		id="main-navbar">
+    </nav>
+
+    <main class="container">
+	
+		<article class="post">
+			<h3><i class="fa-solid fa-calendar-day"></i> Horario de Clases (Hoy)</h3>
+			<br>
+			<p>Consulta aquí los horarios actualizados para el día de la fecha.</p>
+			<br>
+			<div class="iframe-container">
+				<iframe
+					src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBQQUysZ3meowi2Ax6ubj3gBIu9aiZdOAYGxe2sNOF5jraGjGJvHfXJ1_1nasR8aKqorKrQM_3eFZK/pubhtml?gid=343896602&single=true&widget=false&headers=false&chrome=false" 
+					class="iframe-small">
+				</iframe>
+			</div>
+		</article>
+	
+		<div id="cartelera-dinamica">
+			<p style="text-align: center; color: #666;">Cargando novedades institucionales...</p>
+		</div>
+
+    </main>
+
+		<footer class="main-footer"
+			id="main-footer">
+		</footer>
+		
+		<script src="main.js"></script>
+		<script src="novedades.js"></script>
+	
+	<!-- Modal para reproducción de video en LSU -->
+	<div id="modal-lsu" class="modal-lsu">
+	  <div class="modal-lsu-contenido">
+		<span class="cerrar-modal-lsu" onclick="cerrarModalLSU()">&times;</span>
+		<iframe id="iframe-lsu" 
+				src="" 
+				title="Interpretación en Lengua de Señas" 
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+				referrerpolicy="strict-origin-when-cross-origin" 
+				allowfullscreen>
+		</iframe>
+	  </div>
+	</div>
+
+</body>
+</html>

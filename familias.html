@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<link rel="canonical" href="https://liceo14.github.io/familias.html" />
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liceo 14 "Treinta y Tres Orientales" - Familias</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="overlay">
+            <h1>Liceo 14</h1>
+            <h2>"Treinta y Tres Orientales"</h2>
+        </div>
+    </header>
+
+    <nav class="navbar"
+		id="main-navbar">
+    </nav>
+
+    <main class="container">
+		<article class="post">
+			<h3>Escritorio de Herramientas - Familias</h3>
+			
+			<div class="escritorio-grid">
+				
+				<a href="javascript:void(0)" onclick="mostrarSeccion('sec-calendario')" class="herramienta-item">
+					<img src="images/logoCalendario.png" alt="Calendario">
+					<span>Calendario</span>
+				</a>
+
+				<a href="javascript:void(0)" onclick="mostrarSeccion('sec-bienestar')" class="herramienta-item">
+					<img src="images/logoCD.png" alt="Bienestar y ciudadanía digital">
+					<span>Bienestar y ciudadanía digital</span>
+				</a>
+
+				<a href="javascript:void(0)" onclick="mostrarSeccion('sec-formacion')" class="herramienta-item">
+					<img src="images/logoPlano.png" alt="Formación y oportunidades">
+					<span>Formación y oportunidades</span>
+				</a>
+
+				<a href="mailto:aulainfo14@gmail.com?subject=Mensaje desde Web" class="herramienta-item">
+					<img src="images/logoVoz.png" alt="Voz de la familia">
+					<span>Voz de la familia</span>
+				</a>
+
+			</div>
+		</article>
+		
+		<article id="sec-calendario" class="post seccion" style="display:none;">
+			<h3>Calendario</h3>
+			<br>
+			<div style="width: 100%; max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: 8px; border: 2px solid #2D5A27;">
+				<iframe 
+					src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FMontevideo&showPrint=0&src=bGljZW8xNEBnbWFpbC5jb20&src=ZXMudXkjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23009688&color=%230b8043" 
+					style="border:0" 
+					width="100%" 
+					height="500" 
+					frameborder="0" 
+					scrolling="no">
+				</iframe>
+			</div>
+			<a href="javascript:void(0)" onclick="ocultarTodo()" class="btn-comment">Regresar</a>
+		</article>
+		
+		<article id="sec-bienestar" class="post seccion" style="display:none;">
+			<h3>Bienestar y ciudadanía digital</h3>
+			<div class="escritorio-grid">
+			
+				<a href="https://capacitacion.agesic.gub.uy/course/index.php?categoryid=10" target="_blank" class="herramienta-item">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Logo_de_Agesic.png" alt="Agesic">
+					<span>Agesic</span>
+				</a>
+			
+				<a href="https://ceibal.edu.uy/institucional/ciudadania-digital/familias/" target="_blank" class="herramienta-item">
+					<img src="images/logoCeibal.png" alt="Maleta Ceibal">
+					<span>Recursos Ceibal</span>
+				</a>
+				
+				<a href="https://www.pantallasamigas.net/category/ciudadania-digital-blog/" target="_blank" class="herramienta-item">
+					<img src="https://pbs.twimg.com/profile_images/670975418124644353/b74axVDZ_400x400.png" alt="Pantallas amigas">
+					<span>Pantallas amigas</span>
+				</a>
+				
+				<a href="https://www.unicef.org/uruguay/convivencia-digital" target="_blank" class="herramienta-item">
+					<img src="https://www3.gobiernodecanarias.org/medusa/wiki/images/a/ac/Unicef-logo.png" alt="Unicef">
+					<span>Unicef</span>
+				</a>
+			</div>
+			<a href="javascript:void(0)" onclick="ocultarTodo()" class="btn-comment">Regresar</a>
+		</article>
+
+		<article id="sec-formacion" class="post seccion" style="display:none;">
+			<h3>Formación y oportunidades</h3>
+			<div class="escritorio-grid">
+				<a href="https://becas.edu.uy/" target="_blank" class="herramienta-item">
+					<img src="https://becas.edu.uy/themes/custom/anep/logo.svg" alt="Becas Butiá">
+					<span>Becas Butiá</span>
+				</a>
+
+				<a href="https://www.dges.edu.uy/estudiantes/inscripciones" target="_blank" class="herramienta-item">
+					<img src="images/logoPase.png" alt="Pases 2026">
+					<span>Pases 2026</span>
+				</a>
+
+				<a href="https://www.montevideo.gub.uy/app/stm/consulta-habilitaciones/" target="_blank" class="herramienta-item">
+					<img src="https://www.brou.com.uy/documents/20182/62854/logo_STM.jpg/acdd0dbe-6fe1-464a-b895-4461536eb3a9?t=1719595880577" alt="Consulta STM">
+					<span>Consulta STM</span>
+				</a>
+				
+				<a href="https://guri2.ceip.edu.uy/GuriFamiliaAppWeb/" target="_blank" class="herramienta-item">
+					<img src="https://www.dgeip.edu.uy//documentos/galerias/prensa/1360/portada-noticia-guri-new-logo.jpg" alt="Plataforma Gurí">
+					<span>Plataforma Gurí</span>
+				</a>
+			</div>
+			<a href="javascript:void(0)" onclick="ocultarTodo()" class="btn-comment">Regresar</a>
+		</article>
+		
+    </main>
+
+	<footer class="main-footer"
+		id="main-footer">
+	</footer>
+
+	<script src="main.js"></script>
+	<script src="auxiliar.js"></script>
+
+</body>
+</html>

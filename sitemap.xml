@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página de Inicio -->
+  <url>
+    <loc>https://liceo14.github.io/index.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Reservas de Recursos -->
+  <url>
+    <loc>https://liceo14.github.io/reservas.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Aviso de Inasistencias Docentes -->
+  <url>
+    <loc>https://liceo14.github.io/aviso_doc.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Aviso de Inasistencias Funcionarios -->
+  <url>
+    <loc>https://liceo14.github.io/aviso_fun.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Novedades (Se actualiza seguido) -->
+  <url>
+    <loc>https://liceo14.github.io/novedades.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Equipo -->
+  <url>
+    <loc>https://liceo14.github.io/equipo.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Acerca de -->
+  <url>
+    <loc>https://liceo14.github.io/acerca-de.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Herramientas Laboratorio -->
+  <url>
+    <loc>https://liceo14.github.io/tools_lab.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Parte Diario -->
+  <url>
+    <loc>https://liceo14.github.io/parteD.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

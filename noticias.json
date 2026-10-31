@@ -1,0 +1,37 @@
+[
+  {
+    "titulo": "Calendario de Exámenes Diciembre 2026",
+    "contenido": "Calendario de Exámenes y Acreditaciones Plan EBI / 2013 Diciembre de 2026.",
+    "imagen": "https://lh3.googleusercontent.com/d/1w0HAmU4-8478aYoCf5poE8MpFd1Y4KTJ",
+    "enlace": "novedades.html",
+	"lsu": ""
+  },
+  {
+    "titulo": "Calendario de Reuniones Diciembre 2026",
+    "contenido": "Calendario de Reuniones Plan EBI y EMS Diciembre de 2026.",
+    "imagen": "https://lh3.googleusercontent.com/d/1VvFVK7W4GS29TE5aMll1AvUKUiTAzh-8",
+    "enlace": "novedades.html",
+	"lsu": ""
+  },
+  {
+    "titulo": "Hackatón de estudiantes",
+    "contenido": "Invitación: 26 de noviembre, Espacio Modelo de Montevideo.",
+    "imagen": "https://documentos.ceibal.edu.uy/portal/2026/09/Ceibal_-_Ciudadania_Digital_-_Hackaton_-_Web-1.png",
+    "enlace": "https://ceibal.edu.uy/institucional/articulos/pensar-crear-y-transformar-con-ia/",
+	"lsu": ""
+  },
+  {
+    "titulo": "Antel Campus Party 2026",
+    "contenido": "Invitación a evento internacional del mundo tecnológico y el gaming.",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_pmhm8rjiO8IXQ9rLI1kqiqMmTWAyLdGv3TODBUGPLdykreJoGZLf5n5e&s=10",
+    "enlace": "https://www.antelarena.com.uy/events/detail/antel-campus-party-2026",
+	"lsu": ""
+  },
+  {
+    "titulo": "Novedades",
+    "contenido": "En la sección novedades, encontrarás noticias de tu interés.",
+    "imagen": "",
+    "enlace": "novedades.html",
+	"lsu": ""
+  }
+ ]

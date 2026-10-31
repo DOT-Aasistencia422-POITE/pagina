@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<link rel="canonical" href="https://liceo14.github.io/aviso_doc.html" />
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liceo 14 "Treinta y Tres Orientales" - Avisos Docentes</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="overlay">
+            <h1>Liceo 14</h1>
+            <h2>"Treinta y Tres Orientales"</h2>
+        </div>
+    </header>
+
+    <nav class="navbar"
+		id="main-navbar">
+    </nav>
+
+	<div class="container">
+		<section class="post">
+			<h3>Aviso de inasistencias docentes.</h3>
+			<br>
+			<h4>Recuerde que deberá completar la fórmula 82 correspondiente.<h4>
+		<form id="inasistenciaForm" class="contact-form">
+			
+			<div class="form-group">
+				<label for="full-name">Nombre Completo:</label>
+				<input type="text" id="full-name" placeholder="Ej. Juan Pérez" required>
+			</div>
+
+			<div class="form-group">
+				<label for="cedula">Documento de identidad (8 dígitos):</label>
+				<input type="text" id="cedula" placeholder="Ej. 12345678" pattern="\d{8}" title="Ingrese los 8 dígitos sin puntos ni guiones" required>
+			</div>
+			
+			<div class="form-group">
+				<label for="materia">Asignatura:</label>
+				<input type="text" id="materia" placeholder="Ej. Historia" required>
+			</div>
+			
+			<div class="form-group">
+				<label for="fecha">Fecha de la inasistencia:</label>
+				<input type="date" id="fecha" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+			</div>
+
+			<div class="form-group">
+				<label for="turno">Turno:</label>
+				<select id="turno" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+					<option value="" disabled selected>Seleccione turno...</option>
+					<option value="Matutino">Matutino</option>
+					<option value="Vespertino">Vespertino</option>
+					<option value="Nocturno">Nocturno</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="motivo">Motivo de inasistencia:</label>
+				<select id="motivo" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+					<option value="" disabled selected>Seleccione el motivo...</option>
+					<option value="71 Personales">71 Personales</option>
+					<option value="70.1 Enfermedad">70.1 Enfermedad</option>
+					<option value="70.2 Maternidad">70.2 Maternidad</option>
+					<option value="70.3 Lactancia">70.3 Lactancia</option>
+					<option value="70.4 Duelo">70.4 Duelo</option>
+					<option value="70.5 Matrimonio">70.5 Matrimonio</option>
+					<option value="70.6 Paternidad">70.6 Paternidad</option>
+					<option value="70.7 Donación de sangre">70.7 Donación de sangre</option>
+					<option value="70.11 Concursos, exámenes">70.11 Concursos, exámenes</option>
+					<option value="70.12 Reuniones y tribunales">70.12 Reuniones y tribunales</option>
+					<option value="70.13 Motivos especiales">70.13 Motivos especiales</option>
+					<option value="Otros motivos">Otros motivos</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Niveles afectados:</label>
+				<!-- <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; background: #f9f9f9; padding: 10px; border-radius: 5px;">-->
+					<label><input type="checkbox" name="nivel" value="7mo"> 7mo</label>
+					<label><input type="checkbox" name="nivel" value="8vo"> 8vo</label>
+					<label><input type="checkbox" name="nivel" value="9no"> 9no</label>
+					<label><input type="checkbox" name="nivel" value="1ems"> 1er EMS</label>
+					<label><input type="checkbox" name="nivel" value="EE"> EE (Extra edad)</label>
+					<label><input type="checkbox" name="nivel" value="Coord"> Coordinación</label>
+				<!--</div>-->
+			</div>
+
+			<div class="form-group">
+				<label for="message">Grupos y detalles adicionales:</label>
+				<textarea id="message" rows="3" placeholder="Ej: 7mo 1, 8vo 3..." ></textarea>
+			</div>
+
+			<button type="submit" class="btn-comment">Generar Correo de Aviso</button>
+		</form>
+		</section>
+	</div>
+
+	<footer class="main-footer"
+		id="main-footer">
+	</footer>
+
+	<script>
+		document.getElementById('inasistenciaForm').addEventListener('submit', function(e) {
+		e.preventDefault();
+
+		// 1. Captura de valores
+		const nombre = document.getElementById('full-name').value;
+		const cedula = document.getElementById('cedula').value;
+		const materia = document.getElementById('materia').value;
+		const fecha = document.getElementById('fecha').value;
+		const turno = document.getElementById('turno').value;
+		const motivo = document.getElementById('motivo').value;
+		const detalles = document.getElementById('message').value;
+
+		// 2. Captura de checkboxes
+		const checkboxes = document.querySelectorAll('input[name="nivel"]:checked');
+		let niveles = [];
+		checkboxes.forEach((cb) => niveles.push(cb.value));
+		
+		if (niveles.length === 0) {
+			alert("Por favor, seleccione al menos un nivel afectado.");
+			return;
+		}
+
+		// 3. Preparación del correo
+		const destinatario = "inasistencias14diurno@gmail.com";
+		const asunto = `Aviso Inasistencia: ${nombre} - ${fecha} - ${motivo}`;
+		
+		// Cuerpo del mensaje formateado
+		const cuerpo = `AVISO DE INASISTENCIA DOCENTE
+	---------------------------------
+	DOCENTE: ${nombre}
+	CÉDULA: ${cedula}
+	MATERIA: ${materia}
+	FECHA: ${fecha}
+	TURNO: ${turno}
+	MOTIVO: ${motivo}
+	NIVELES: ${niveles.join(", ")}
+
+	DETALLES/GRUPOS:
+	${detalles}
+	---------------------------------
+	Enviado desde el portal web del Liceo 14.`;
+
+		const mailtoUrl = `mailto:${destinatario}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+		
+		// 3. "Abrir en nueva pestaña" y aviso de envío
+		const nuevaVentana = window.open(mailtoUrl, '_blank');
+		if (nuevaVentana) {
+			// Intentamos cerrar la pestaña nueva después de medio segundo
+			// Nota: Muchos navegadores bloquean el .close() por seguridad si no hay contenido real
+			setTimeout(() => nuevaVentana.close(), 500);
+		}
+
+		// 4. Mensaje de éxito en TU página
+		alert("✅ Su aviso de inasistencia ha sido generado.\n\nPor favor, verifique que su aplicación de correo se haya abierto para completar el envío.");
+
+		// 5. Limpiar el formulario
+		document.getElementById('inasistenciaForm').reset();
+	});
+	</script>
+
+	<script src="main.js"></script>
+
+</body>
+</html>
