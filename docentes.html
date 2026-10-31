@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docentes y funcionarios · Liceo N.º 1 de La Paz</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-pagina="docentes">
+
+<main>
+  <div class="cabecera">
+    <div class="icono"><svg><use href="#i-docentes"/></svg></div>
+    <div><h1>Docentes y funcionarios</h1><p>Formularios, reservas y herramientas de trabajo.</p></div>
+  </div>
+
+  <section>
+    <div class="pestanas" role="tablist">
+      <button class="activo" data-panel="p-docentes">Docentes</button>
+      <button data-panel="p-funcionarios">Funcionarios</button>
+    </div>
+
+    <div class="panel-pestana" id="p-docentes">
+      <div class="accesos">
+        <!-- CAMBIAR LINKS: reemplazar cada href="#" por el link real -->
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-aviso"/></svg></div><h3>Aviso de inasistencia</h3><p>Formulario para comunicar faltas.</p></a>
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-calendario"/></svg></div><h3>Reserva de salas</h3><p>Sala de informática, salón de actos y otros espacios.</p></a>
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-carpeta"/></svg></div><h3>Registro diario</h3><p>Formulario de registro de la sala de informática.</p></a>
+      <a class="tarjeta" href="https://mail.google.com" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-correo"/></svg></div><h3>Correo institucional</h3><p>Acceso al correo del liceo.</p></a>
+      <a class="tarjeta" href="https://ceibal.schoology.com" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-compu"/></svg></div><h3>CREA</h3><p>Plataforma educativa de Ceibal.</p></a>
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-novedades"/></svg></div><h3>Avisos para docentes</h3><p>Comunicados internos y documentos.</p></a>
+      </div>
+    </div>
+
+    <div class="panel-pestana" id="p-funcionarios" hidden>
+      <div class="accesos">
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-aviso"/></svg></div><h3>Aviso de inasistencia</h3><p>Formulario para funcionarios.</p></a>
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-funcionarios"/></svg></div><h3>Equipo del liceo</h3><p>Dirección, secretaría, adscripción y servicios.</p></a>
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-carpeta"/></svg></div><h3>Trámites y formularios</h3><p>Licencias, constancias y otros trámites.</p></a>
+      <a class="tarjeta" href="https://mail.google.com" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-correo"/></svg></div><h3>Correo institucional</h3><p>Acceso al correo del liceo.</p></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="layout.js"></script>
+</body>
+</html>
