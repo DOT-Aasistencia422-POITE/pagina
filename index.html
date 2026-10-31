@@ -1,173 +1,231 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-	<link rel="canonical" href="https://liceo14.github.io/" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liceo 14 "Treinta y Tres Orientales" | Montevideo</title>
-	
-	<!-- Descripción para buscadores -->
-	<meta name="description" content="Portal oficial del Liceo N° 14 'Treinta y Tres Orientales' de Montevideo. Acceso a horarios, reserva de recursos, avisos de inasistencias y novedades institucionales.">
-
-	<!-- Palabras clave (ayudan un poco al buscador interno) -->
-	<meta name="keywords" content="Liceo 14, Montevideo, Educación secundaria, Reservas, Inasistencias docentes, Uruguay, DGES">
-	
-	<!-- Etiquetas Open Graph (Para que se vea bien cuando compartas el link por WhatsApp o Facebook) -->
-	<meta property="og:site_name" content="Liceo 14 - Portal web">
-	<meta property="og:title" content="Liceo 14 'Treinta y Tres Orientales' - Montevideo">
-	<meta property="og:description" content="Sitio web oficial. Información actualizada para la comunidad educativa del Liceo 14.">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://liceo14.github.io/">
-
-    <link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-	
-	<!-- Icono de la pestaña (Favicon) -->
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
-	<!-- Opcional: Icono para cuando guardan la web en la pantalla de inicio del celular -->
-	<link rel="apple-touch-icon" href="logo192.png">
-	
-	<script type="application/ld+json">
-	{
-	  "@context": "https://schema.org",
-	  "@type": "WebSite",
-	  "name": "Liceo 14 | Montevideo",
-	  "url": "https://liceo14.github.io/"
-	}
-	</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liceo N.º 1 de La Paz "Javier de Viana"</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bordo:#1B7A25; --bordo-osc:#145C1C; --bordo-suave:#E7F3E8; --rojo:#BD0415;
+    --fondo:#F4F4F6; --blanco:#FFFFFF; --texto:#1E1E24; --gris:#6B6B76; --linea:#E3E3E8;
+    --radio:18px; --sombra:0 6px 24px rgba(30,30,36,.06);
+    --ancho-menu:248px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--fondo);color:var(--texto);line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:'Poppins',sans-serif;line-height:1.25}
+ 
+  /* ---------- Menú lateral ---------- */
+  .lateral{position:fixed;inset:0 auto 0 0;width:var(--ancho-menu);background:var(--blanco);
+    border-right:1px solid var(--linea);padding:28px 18px;display:flex;flex-direction:column;gap:28px;overflow-y:auto}
+  .marca{display:flex;align-items:center;gap:12px}
+  .escudo{width:42px;height:auto;flex:none}
+  .marca b{display:block;font-size:.95rem}
+  .marca small{color:var(--gris);font-size:.78rem}
+  .grupo-menu p{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);margin:0 10px 6px}
+  .lateral nav a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;
+    font-size:.92rem;color:#3A3A44;transition:background .2s,color .2s}
+  .lateral nav a svg{width:20px;height:20px;flex:none;stroke:currentColor}
+  .lateral nav a:hover{background:var(--fondo)}
+  .lateral nav a.activo{background:var(--bordo-suave);color:var(--bordo);font-weight:600}
+ 
+  /* ---------- Contenido ---------- */
+  main{margin-left:var(--ancho-menu);padding:40px clamp(20px,4vw,56px) 60px;max-width:1240px}
+  .bienvenida{background:var(--blanco);border-radius:24px;padding:40px;box-shadow:var(--sombra);
+    display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+  .etiqueta{display:inline-block;background:var(--bordo-suave);color:var(--bordo);font-size:.78rem;
+    font-weight:600;padding:5px 12px;border-radius:99px;margin-bottom:14px}
+  .bienvenida h1{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+  .bienvenida h1 span{color:var(--rojo)}
+  .bienvenida p{color:var(--gris);margin:14px 0 22px;max-width:52ch}
+  .botones{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{padding:11px 20px;border-radius:12px;font-weight:600;font-size:.9rem;transition:transform .15s,background .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-principal{background:var(--bordo);color:#fff}
+  .btn-principal:hover{background:var(--bordo-osc)}
+  .btn-secundario{border:1px solid var(--linea);background:var(--blanco)}
+  .foto{aspect-ratio:4/3;border-radius:var(--radio);background:
+    linear-gradient(135deg,var(--bordo-suave),#F7E6E8);display:grid;place-items:center}
+  .foto img{height:78%;filter:drop-shadow(0 10px 18px rgba(0,0,0,.12))}
+ 
+  section{margin-top:44px}
+  .titulo-seccion{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+  .titulo-seccion h2{font-size:1.3rem}
+  .titulo-seccion a{color:var(--bordo);font-size:.88rem;font-weight:600}
+ 
+  .accesos{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+  .tarjeta{background:var(--blanco);border-radius:var(--radio);padding:22px;box-shadow:var(--sombra);
+    display:flex;flex-direction:column;gap:12px;transition:transform .2s,box-shadow .2s;position:relative}
+  .tarjeta:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(27,122,37,.14)}
+  .icono{width:44px;height:44px;border-radius:12px;background:var(--bordo-suave);color:var(--bordo);display:grid;place-items:center}
+  .icono svg{width:22px;height:22px;stroke:currentColor}
+  .tarjeta h3{font-size:1rem}
+  .tarjeta p{font-size:.85rem;color:var(--gris)}
+  .tarjeta .flecha{position:absolute;top:22px;right:22px;color:#B8B8C2;transition:color .2s,transform .2s}
+  .tarjeta:hover .flecha{color:var(--bordo);transform:translateX(3px)}
+ 
+  .turnos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .turno{background:var(--blanco);border-radius:var(--radio);padding:22px;box-shadow:var(--sombra);border-top:4px solid var(--bordo)}
+  .turno:nth-child(2){border-top-color:var(--rojo)}
+  .turno:nth-child(3){border-top-color:#3A3A44}
+  .turno h3{font-size:1rem;margin-bottom:6px}
+  .turno p{font-size:.88rem;color:var(--gris)}
+ 
+  .novedades{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+  .noticia{background:var(--blanco);border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra)}
+  .noticia .img{height:140px;background:linear-gradient(135deg,#ECECF1,var(--bordo-suave))}
+  .noticia div.cuerpo{padding:18px}
+  .noticia time{font-size:.75rem;color:var(--rojo);font-weight:600}
+  .noticia h3{font-size:.98rem;margin:6px 0}
+  .noticia p{font-size:.85rem;color:var(--gris)}
+ 
+  .contacto{background:#14231A;color:#fff;border-radius:24px;padding:32px;display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px}
+  .contacto h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:#8FD39A;margin-bottom:8px}
+  .contacto p{font-size:.92rem;color:#E6E6EA}
+  .contacto a:hover{color:#fff;text-decoration:underline}
+  footer{margin-top:28px;font-size:.8rem;color:var(--gris);text-align:center}
+ 
+  /* ---------- Celular: menú abajo ---------- */
+  .barra-movil{display:none}
+  @media (max-width:860px){
+    .lateral{display:none}
+    main{margin-left:0;padding:24px 16px 96px}
+    .bienvenida{grid-template-columns:1fr;padding:26px}
+    .foto{order:-1;aspect-ratio:16/9}
+    .turnos{grid-template-columns:1fr}
+    .barra-movil{display:flex;position:fixed;bottom:12px;left:12px;right:12px;background:var(--blanco);
+      border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,.12);justify-content:space-around;padding:8px;z-index:10}
+    .barra-movil a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.68rem;color:var(--gris);padding:6px 10px;border-radius:12px}
+    .barra-movil a svg{width:22px;height:22px;stroke:currentColor}
+    .barra-movil a.activo{color:var(--bordo);background:var(--bordo-suave)}
+  }
+</style>
 </head>
-
 <body>
-
-    <header class="main-header">
-        <div class="overlay">
-            <h1>Liceo 14</h1>
-            <h2>"Treinta y Tres Orientales"</h2>
-        </div>
-    </header>
-
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html" class="active" >Inicio</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn" >Horarios</a>
-                <div class="dropdown-content">
-                    <a href="https://docs.google.com/spreadsheets/d/1S4RPSFPPL8TJfFpcfSnbaSpA59VRErhSX9xOo3JJAgg/edit?usp=sharing" target="_blank" >EBI_EMS</a>
-                    <a href="https://docs.google.com/spreadsheets/d/1FxWdO2W77InL7VsU6Gt9E8zPr_ZPMNdMhwqtTCmlhqA/edit?usp=sharing" target="_blank" >Plan 2013</a>
-                    <a href="https://docs.google.com/spreadsheets/d/1LUVWRVHHPf_7A_T2Ypx-8fc7ujI9McIkcy73uBdPuQY/edit?usp=sharing" target="_blank" >Horarios Salas</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn" >Docentes</a>
-                <div class="dropdown-content">
-                    <a href="aviso_doc.html" >Aviso inasistencias docentes</a>
-					<a href="area_doc.html" >Escritorio</a>
-					<a href="https://lu.anep.edu.uy/cas-anep/login?service=https://portafoliodocente.anep.edu.uy/shiro-cas" target="_blank" >Portafolio</a>
-                    <a href="reservas.html" >Reservas</a>
-                    <a href="https://docs.google.com/spreadsheets/d/1qaT2C_74vArTScRWu9yaT72FRWDINwXcM-_-Jvhi0JM/edit?usp=sharing" target="_blank" >Ver reservas</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn" >Espacios</a>
-                <div class="dropdown-content">
-					<a href="area_ads.html" >Adscripción</a>
-					<a href="biblioteca.html" >Biblioteca</a>
-					<a href="estudiantes.html" >Estudiantes</a>
-					<a href="familias.html" >Familias</a>
-					<a href="tools_lab.html" >Laboratorio de Informática</a>
-					<a href="casita.html" >La Casita</a>
-                </div>
-            </li>
-            <li><a href="novedades.html" >Novedades</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn" >Funcionarios</a>
-                <div class="dropdown-content">
-					<a href="aviso_fun.html" >Aviso inasistencias funcionarios</a>
-                    <a href="equipo.html" >Equipo Educativo</a>
-					<a href="https://servicios.ces.edu.uy/portal/cgi-bin/portal/login" target="_blank">Portal de servicios</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn" >Recursos</a>
-                <div class="dropdown-content">
-					<a href="https://www.inumet.gub.uy/alerta" target="_blank" >Alerta Meteorológica</a>
-                    <a href="https://www.dges.edu.uy/propuesta-educativa/programas-de-asignatura" target="_blank" >Planes y programas</a>
-                    <a href="#">Normativa</a>
-                    <a href="https://sites.google.com/view/liceo14nocturno/" target="_blank" >Liceo Nocturno</a>
-                    <a href="https://www.dges.edu.uy/" target="_blank" >DGES</a>
-                    <a href="https://ceibal.edu.uy/" target="_blank" >Ceibal</a>
-                    <a href="https://www.utu.edu.uy/" target="_blank" >UTU</a>
-                </div>
-            </li>
-            <li><a href="acerca-de.html">Acerca de</a></li>
-        </ul>
+ 
+<!-- Íconos reutilizables (trazos simples, estilo línea) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-inicio" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-reloj" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-docentes" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-4 9 4-9 4z"/><path d="M7 10v5c0 1.5 2.5 3 5 3s5-1.5 5-3v-5"/></symbol>
+    <symbol id="i-espacios" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+    <symbol id="i-novedades" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13a2 2 0 0 1 2 2v12H6a2 2 0 0 1-2-2z"/><path d="M8 9h7M8 13h7M8 17h4"/></symbol>
+    <symbol id="i-funcionarios" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 19c0-2 1.5-3.5 4-3.5"/></symbol>
+    <symbol id="i-recursos" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></symbol>
+    <symbol id="i-calendario" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-libro" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></symbol>
+    <symbol id="i-aviso" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l6 4V6L7 10z"/><path d="M17 9a4 4 0 0 1 0 6"/></symbol>
+    <symbol id="i-familia" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></symbol>
+    <symbol id="i-flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  </defs>
+</svg>
+ 
+<aside class="lateral">
+  <div class="marca">
+    <img class="escudo" src="images/logo.svg" alt="Escudo del liceo">
+    <div><b>Liceo N.º 1</b><small>La Paz · Canelones</small></div>
+  </div>
+  <div class="grupo-menu">
+    <p>General</p>
+    <nav>
+      <a href="#" class="activo"><svg><use href="#i-inicio"/></svg>Inicio</a>
+      <a href="#horarios"><svg><use href="#i-reloj"/></svg>Horarios</a>
+      <a href="#novedades"><svg><use href="#i-novedades"/></svg>Novedades</a>
+      <a href="#espacios"><svg><use href="#i-espacios"/></svg>Espacios</a>
     </nav>
-
-    <main class="container">
-	
-		<article class="post" id="seccion-noticias">
-			<div id="noticia-dinamica">
-				<h3 id="noticia-titulo">Cargando noticias...</h3>
-				
-				<div class="noticia-cuerpo">
-					<div class="noticia-texto-bloque">
-						<p id="noticia-contenido"></p>
-						
-						<!-- AQUI REEMPLAZAS: Envolvemos el enlace en el nuevo div -->
-						<div class="acciones-noticia" id="noticia-acciones">
-							<a id="noticia-enlace" href="#" class="btn-comment">Leer más</a>
-							<!-- El botón de LSU se agregará dinámicamente aquí desde JS -->
-						</div>
-					</div>
-					
-					<div id="noticia-imagen-container">
-						<img id="noticia-imagen" src="" alt="Imagen de la noticia">
-					</div>
-				</div>
-			</div>
-		</article>
-		
-        <article class="post">
-            <h3>Bienvenidos al portal del Liceo Nro. 14 "Treinta y tres Orientales" de Montevideo.</h3>
-			<br>
-			<p>El Liceo Nº 14 "Treinta y Tres Orientales" es una institución educativa emblemática del Municipio E en Montevideo. Ubicado en el corazón del barrio Unión, en la intersección de la Av. 8 de Octubre 3390 y la Av. José Batlle y Ordóñez (ex Propios), nuestro centro ha sido un pilar de formación para múltiples generaciones desde mediados del siglo XX.</p>
-			<br>
-			<p>Para atender a nuestra diversa comunidad educativa, el liceo opera en tres turnos que cubren una amplia franja horaria:</p>
-			<br>
-			<ul>
-				<li>Turno Matutino (07:20 a 13:25): EBI y EMS.</li>
-				<li>Turno Vespertino (12:40 a 19:00): EBI, EMS y Plan 2013 (Extra edad).</li>
-				<li>Turno Nocturno: Enfocado en modalidades flexibles para jóvenes y adultos.</li>
-			</ul>
-			<br>
-			<p>Actualmente, el centro implementa los planes Revisión 2026, Educación Media Superior (EMS) y propuestas de Extra edad, adaptándose a las nuevas exigencias del sistema educativo uruguayo.</p>
-        </article>
-		
-		<!-- <a href="mailto:liceo14@gmail.com?subject=Comentario desde Web" class="btn-comment">Enviar comentario</a> -->
-    </main>
-
-	<footer class="main-footer"
-		id="main-footer">
-	</footer>
-	
-	<script src="main.js"></script>
-
-	<!-- Modal para reproducción de video en LSU -->
-	<div id="modal-lsu" class="modal-lsu">
-	  <div class="modal-lsu-contenido">
-		<span class="cerrar-modal-lsu" onclick="cerrarModalLSU()">&times;</span>
-		<iframe id="iframe-lsu" 
-				src="" 
-				title="Interpretación en Lengua de Señas" 
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-				referrerpolicy="strict-origin-when-cross-origin" 
-				allowfullscreen>
-		</iframe>
-	  </div>
-	</div>
-
+  </div>
+  <div class="grupo-menu">
+    <p>Comunidad</p>
+    <nav>
+      <a href="#"><svg><use href="#i-docentes"/></svg>Docentes</a>
+      <a href="#"><svg><use href="#i-funcionarios"/></svg>Funcionarios</a>
+      <a href="#"><svg><use href="#i-familia"/></svg>Familias</a>
+    </nav>
+  </div>
+  <div class="grupo-menu">
+    <p>Más</p>
+    <nav>
+      <a href="#"><svg><use href="#i-recursos"/></svg>Recursos</a>
+      <a href="#contacto"><svg><use href="#i-info"/></svg>Acerca del liceo</a>
+    </nav>
+  </div>
+</aside>
+ 
+<main>
+  <div class="bienvenida">
+    <div>
+      <span class="etiqueta">Educación Media · DGES · Desde 1964</span>
+      <h1>Liceo N.º 1 de La Paz <span>"Javier de Viana"</span></h1>
+      <p>[Texto de bienvenida: breve presentación del liceo, su historia y su comunidad. Reemplazar con el texto institucional.]</p>
+      <div class="botones">
+        <a class="btn btn-principal" href="#horarios">Ver horarios</a>
+        <a class="btn btn-secundario" href="#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="foto"><img src="images/logo.svg" alt="Escudo del Liceo N.º 1 de La Paz"></div>
+  </div>
+ 
+  <section id="espacios">
+    <div class="titulo-seccion"><h2>Accesos rápidos</h2></div>
+    <div class="accesos">
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-reloj"/></svg></div><h3>Horarios</h3><p>Horarios por turno y grupo.</p></a>
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-calendario"/></svg></div><h3>Reservas</h3><p>Sala de informática y espacios comunes.</p></a>
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-aviso"/></svg></div><h3>Avisos de inasistencia</h3><p>Formularios para docentes y funcionarios.</p></a>
+      <a class="tarjeta" href="https://www.instagram.com/biblioteca_lapaz1/" target="_blank" rel="noopener"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-libro"/></svg></div><h3>Biblioteca</h3><p>Novedades y actividades en Instagram.</p></a>
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-familia"/></svg></div><h3>Familias</h3><p>Información y trámites para familias.</p></a>
+      <a class="tarjeta" href="#"><span class="flecha"><svg width="18" height="18"><use href="#i-flecha"/></svg></span>
+        <div class="icono"><svg><use href="#i-recursos"/></svg></div><h3>Recursos</h3><p>Ceibal, DGES, programas y reglamentos.</p></a>
+    </div>
+  </section>
+ 
+  <section id="horarios">
+    <div class="titulo-seccion"><h2>Turnos</h2></div>
+    <div class="turnos">
+      <div class="turno"><h3>Matutino extendido</h3><p>Turno diurno. [Horario y cursos que se dictan]</p></div>
+      <div class="turno"><h3>Vespertino extendido</h3><p>Turno diurno. [Horario y cursos que se dictan]</p></div>
+    </div>
+  </section>
+ 
+  <section id="novedades">
+    <div class="titulo-seccion"><h2>Novedades</h2><a href="#">Ver todas →</a></div>
+    <div class="novedades">
+      <article class="noticia"><div class="img"></div><div class="cuerpo"><time>[fecha]</time><h3>[Título de la novedad]</h3><p>[Resumen breve]</p></div></article>
+      <article class="noticia"><div class="img"></div><div class="cuerpo"><time>[fecha]</time><h3>[Título de la novedad]</h3><p>[Resumen breve]</p></div></article>
+      <article class="noticia"><div class="img"></div><div class="cuerpo"><time>[fecha]</time><h3>[Título de la novedad]</h3><p>[Resumen breve]</p></div></article>
+    </div>
+  </section>
+ 
+  <section id="contacto">
+    <div class="contacto">
+      <div><h3>Dirección</h3><p>Ramón Álvarez s/n esq. Tiscornia<br>La Paz, Canelones</p></div>
+      <div><h3>Teléfonos</h3><p><a href="tel:+59823622213">2362 2213</a><br><a href="tel:+59823624472">2362 4472</a></p></div>
+      <div><h3>Correo</h3><p><a href="mailto:ljavierdeviana@gmail.com">ljavierdeviana@gmail.com</a></p></div>
+      <div><h3>Biblioteca</h3><p><a href="https://www.instagram.com/biblioteca_lapaz1/" target="_blank" rel="noopener">@biblioteca_lapaz1</a></p></div>
+    </div>
+    <footer>Liceo N.º 1 de La Paz "Javier de Viana" · Dirección General de Educación Secundaria</footer>
+  </section>
+</main>
+ 
+<nav class="barra-movil">
+  <a href="#" class="activo"><svg><use href="#i-inicio"/></svg>Inicio</a>
+  <a href="#horarios"><svg><use href="#i-reloj"/></svg>Horarios</a>
+  <a href="#novedades"><svg><use href="#i-novedades"/></svg>Novedades</a>
+  <a href="#espacios"><svg><use href="#i-espacios"/></svg>Espacios</a>
+  <a href="#contacto"><svg><use href="#i-info"/></svg>Más</a>
+</nav>
+ 
 </body>
 </html>
+ 
