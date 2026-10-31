@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://liceo14.github.io/sitemap.xml
