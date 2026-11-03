@@ -18,7 +18,7 @@ Sitio institucional del liceo (Ramón Álvarez s/n esq. Tiscornia, La Paz, Canel
 
 ## Páginas
 
-- `index.html` – Inicio
+- `index.html` – Inicio https://dot-aasistencia422-poite.github.io/pagina/
 - `horarios.html` – Turnos y horarios de atención
 - `novedades.html` – Noticias (lee `noticias.json`)
 - `docentes.html` – Docentes y funcionarios
